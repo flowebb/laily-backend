@@ -4,6 +4,7 @@ const cors = require('cors');
 const userRoutes = require('./routes/users');
 const authRoutes = require('./routes/auth');
 const productRoutes = require('./routes/products');
+const settingsRoutes = require('./routes/settings');
 
 const app = express();
 const PORT = 5000;
@@ -36,6 +37,9 @@ app.use('/api/auth', authRoutes);
 
 // 상품 라우트
 app.use('/api/products', productRoutes);
+
+// 설정 라우트
+app.use('/api/settings', settingsRoutes);
 
 // 서버 시작
 app.listen(PORT, () => {
